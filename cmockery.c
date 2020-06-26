@@ -1700,7 +1700,7 @@ int _run_test(
   }
 
   if (function_type == UNIT_TEST_FUNCTION_TYPE_TEST) {
-    print_message("%llu. %s: Starting test", n, function_name);
+    print_message("%llu. %s: start", n, function_name);
   }
   initialize_testing(function_name);
   global_running_test = 1;
@@ -1717,12 +1717,12 @@ int _run_test(
     global_running_test = 0;
 
     if (function_type == UNIT_TEST_FUNCTION_TYPE_TEST) {
-      print_message("%llu. %s: ok.\n", n, function_name);
+      print_message("%llu. %s: ok\n", n, function_name);
     }
     rc = 0;
   } else {
     global_running_test = 0;
-    print_message("%llu. %s: Test failed.", n, function_name);
+    print_message("%llu. %s: failed", n, function_name);
   }
   teardown_testing(function_name);
 
